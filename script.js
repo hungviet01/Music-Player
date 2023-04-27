@@ -159,7 +159,7 @@ $(function () {
             "_41"
         ],
         trackUrl = [
-            "/music/1.mp3",
+            "https://raw.githubusercontent.com/hungviet01/music-player/main/music/1.mp3",
             "/music/2.mp3",
             "/music/3.mp3",
             "/music/4.mp3",
