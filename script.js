@@ -159,7 +159,7 @@ $(function () {
             "_41"
         ],
         trackUrl = [
-            "https://github.com/hungviet01/music-player/blob/main/music/24kGoldn%20-%20Mood.mp3",
+            "https://github.com/hungviet01/music-player/blob/main/music/24kGoldn - Mood.mp3",
             "/music/7 Years - Lukas Graham.mp3",
             "/music/8 Letters - Why Don't We.mp3",
             "/music/Aamir - Right Now Na Na Na.mp3",
