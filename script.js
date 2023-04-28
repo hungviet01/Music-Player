@@ -325,8 +325,17 @@ $(function () {
     }
 
     function selectTrack(flag) {
-        if (flag == 0 || flag == 1) ++currIndex;
-        else --currIndex;
+        if (flag == 0 || flag == 1) {
+            ++currIndex;
+            if (currIndex >= albumArtworks.length) {
+                currIndex = 0;
+            }
+        } else {
+            --currIndex;
+            if (currIndex < 0) {
+                currIndex = albumArtworks.length - 1;
+            }
+        }
 
         if (currIndex > -1 && currIndex < albumArtworks.length) {
             if (flag == 0) i.attr("class", "fa fa-play");
