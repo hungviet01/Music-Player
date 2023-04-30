@@ -385,10 +385,8 @@ $(function () {
         var volumeUp = document.querySelector("#volume-up");
         var volumeDown = document.querySelector("#volume-down");
 
-        // Set initial volume level
         volumeLevel.style.width = audio.volume * 100 + "%";
 
-        // Volume up button click event
         volumeUp.addEventListener("click", function () {
             if (audio.volume < 1) {
                 audio.volume += 0.1;
@@ -396,7 +394,6 @@ $(function () {
             }
         });
 
-        // Volume down button click event
         volumeDown.addEventListener("click", function () {
             if (audio.volume > 0) {
                 audio.volume -= 0.1;
@@ -404,7 +401,7 @@ $(function () {
             }
         });
     }
-    
+
     function initPlayer() {
         audio = new Audio();
 
