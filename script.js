@@ -387,10 +387,6 @@ $(function () {
 
         selectTrack(0);
 
-        audio.addEventListener("ended", function() {
-            selectTrack(1);
-        });
-
         audio.loop = false;
 
         playPauseButton.on("click", playPause);
