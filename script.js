@@ -70,7 +70,7 @@ $(function () {
             "The way I still love you",
             "Waiting For Love",
             "My Love",
-            "Without Me"
+            "Without Me",
         ],
         trackNames = [
             "24kGoldn - Mood",
@@ -113,7 +113,7 @@ $(function () {
             "The way I still love you - Reynard Silva",
             "Waiting For Love - Romy Wave",
             "Westlife - My Love",
-            "Without Me - Halsey"
+            "Without Me - Halsey",
         ],
         albumArtworks = [
             "_1",
@@ -156,7 +156,7 @@ $(function () {
             "_38",
             "_39",
             "_40",
-            "_41"
+            "_41",
         ],
         trackUrl = [
             "https://raw.githubusercontent.com/hungviet01/music-player/main/music/1.mp3",
@@ -199,7 +199,7 @@ $(function () {
             "https://raw.githubusercontent.com/hungviet01/music-player/main/music/38.mp3",
             "https://raw.githubusercontent.com/hungviet01/music-player/main/music/39.mp3",
             "https://raw.githubusercontent.com/hungviet01/music-player/main/music/40.mp3",
-            "https://raw.githubusercontent.com/hungviet01/music-player/main/music/41.mp3"
+            "https://raw.githubusercontent.com/hungviet01/music-player/main/music/41.mp3",
         ],
         playPreviousTrackButton = $("#play-previous"),
         playNextTrackButton = $("#play-next"),
@@ -380,12 +380,39 @@ $(function () {
             if (flag == 0 || flag == 1) --currIndex;
             else ++currIndex;
         }
-    }
 
+        var volumeLevel = document.querySelector("#volume-level");
+        var volumeUp = document.querySelector("#volume-up");
+        var volumeDown = document.querySelector("#volume-down");
+
+        // Set initial volume level
+        volumeLevel.style.width = audio.volume * 100 + "%";
+
+        // Volume up button click event
+        volumeUp.addEventListener("click", function () {
+            if (audio.volume < 1) {
+                audio.volume += 0.1;
+                volumeLevel.style.width = audio.volume * 100 + "%";
+            }
+        });
+
+        // Volume down button click event
+        volumeDown.addEventListener("click", function () {
+            if (audio.volume > 0) {
+                audio.volume -= 0.1;
+                volumeLevel.style.width = audio.volume * 100 + "%";
+            }
+        });
+    }
+    
     function initPlayer() {
         audio = new Audio();
 
         selectTrack(0);
+
+        audio.addEventListener("ended", function () {
+            selectTrack(1);
+        });
 
         audio.loop = false;
 

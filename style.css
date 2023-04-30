@@ -308,14 +308,54 @@ body {
 }
 
 .button,
-.button i {
+.button i,
+.volume-button {
     transition: 0.2s ease all;
 }
 
-.button:hover {
+.button:hover,
+.volume-button:hover {
     background-color: #d6d6de;
 }
 
 .button:hover i {
     color: #fff;
+}
+
+#volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 20px;
+    bottom: 2px;
+}
+
+.volume-button {
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(214, 222, 231);
+}
+
+#volume-bar {
+    width: 100px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #d6dee7;
+    position: relative;
+}
+
+#volume-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fd6d94;
+    border-radius: 4px;
+    width: 50%;
+    transition: width 0.1s ease-in-out;
 }
